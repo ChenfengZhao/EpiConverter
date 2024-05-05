@@ -1,12 +1,12 @@
 # EpiConverter
 
-<p align="center">
+<!-- <p align="center">
     <img width="30%" src="./EpiConverter_Logo.png" alt="EpiConverter"><br>
-</p>
+</p> -->
 
 ## Overview
 
-[Add an introduction on EpiConverter] This tool can be installed on all kinds of platforms (e.g., Linux, macOS, Windows, etc).
+EpiConverter is built to properly convert mzXML files to a usable input structure for downstream analysis. The converted data can be further searched using EpiProfile (version 2.1), as the generated “ms1” and “ms2” files can be examined to resolve the comprehensive histone PTM information, including the isobaric histone peptides, low-abundant PTMs, different histone mutations, different derivatization strategies, and histone sequences from various organisms. This tool can be installed on all kinds of platforms (e.g., Linux, macOS, Windows, etc).
 
 ## Requirements
 
@@ -44,25 +44,17 @@ The github repository is composed of the following parts:
 - **config_EpiConverter.ini** is to configure the internal parameters of the tool.
 
 Here are the explaination on the parameters in config_EpiConverter.ini:
-<!-- - **input_path**: folder contains MS data files (.mzXML)
-- **output_path**: folder to save the NuMo Finder search results (.mzXML) 
-- **customized_mods_list**: the (optional) user-defined library that is included for searching 
-- **nucleoside_type**: the type of analytes, DNA or RNA
-- **permethyl**: if permethylation is used for preparing the analytes
-- **polarity**: instrument polarity in MS analysis 
-- **ms1_mass_error_ppm**: mass tolerance for MS1 searching 
-- **ms2_mass_error_ppm**: mass tolerance for MS2 searching 
-- **min_rel_height**: (optional) relative intensity threshold for searching 
-- **min_height**: (optional) absolute intensity threshold for searching 
-- **min_mass**: (optional) minimum m/z that is considered for searching 
-- **max_mass**: (optional) maximum m/z that is considered for searching 
-- **gaussian_filter**: (optional) Gaussian distribution is used for peak filtering 
-- **align_tolerance_min**: the time tolerance for MS1 and MS2 peak alignment 
-- **unknown_search_mode**: enable searching for unknown modifications 
-- **min_height_unknow_search**: the MS2 intensity threshold in the unknown search 
-- **flex_mode**: (optional) ignoring of the requirements for monoisotopic distribution of analytes -->
-- [Add explaination on the parameters in the above format]
-
+- **input_path**: input file folder location
+- **output_path**: output file folder location
+- **ion_mobility**: (under development) empolying ion mobility
+- **core_num**: number of cores used for the conversion
+- **filter_dataset**: precheck the data file
+- **MS1 ion_injection_time**: ion accumulation time for MS1 scan
+- **MS1 instrument_type**: MS analyzer for MS1 scan
+- **MS2 ion_injection_time**: ion accumulation time for MS2 scan
+- **MS2 activation_type**: fragmentation type
+- **MS2 instrument_type**: MS analyzer for MS2 scan
+- **acquisition_method**: type of MS analysis
   
 1. Prepare your MS files following the format of the example. Put these files under the path defined in the **input_path** of config_EpiConverter.ini. EpiConverter automatically searches and processes all the MS files in right format in batches on multi-core CPUs. Feel free to skip this step if you are just intented to process the example data.
 
@@ -81,8 +73,7 @@ cd <the path of EpiConverter_mp.py>
 python3 EpiConverter_mp.py
 ```
 
-4. The results will be generated under the path defined in the **output_path** of config.ini (e.g., ./result/ in this example). It contains the individual results of each compound for each MS data file (i.e., NuMo_Result_XXX.csv), combined results of all the compounds in each MS data file (i.e., NuMo_Results_XXX.csv), and the results of unknow search mode (i.e., Unknown_Search_Result.csv) if enabled.
-
+3. The results will be generated under the path defined in the **output_path** of config_EpiConverter.ini (e.g., ./result/ in this example).
 
 
 ## License
@@ -95,7 +86,8 @@ If you think EpiConverter is helpful for your research, please cite the followin
 
 <!-- Xie, Y; De Luna Vitorino, F.N.; Chen, Y; Lempiäinen, J. K.; Zhao, C.; Steinbock, R. T.; Liu, X.; Lin, Z.; Zahn, E.; Garcia, A. L.; Weitzman, M. D.; Garcia, B. A., SWAMNA: a comprehensive platform for analysis of nucleic acid modifications. *Chemical Communications* **2023** -->
 
-[Add the paper reference in the format of above or keep it ANONYMOUS if required.]
+<!-- [Add the paper reference in the format of above or keep it ANONYMOUS if required.] -->
+[Removed to preserve anonymity]
 
 <!-- [ChemComm version](https://doi.org/10.1039/D3CC04402E)
 
